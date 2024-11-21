@@ -1,0 +1,22 @@
+export const navLinks = [
+  {
+    id:'collection',
+    title:'Collection' 
+  },
+  {
+    id:'men',
+    title:'Men'
+  },
+  {
+    id:'women',
+    title:'Women'
+  },
+  {
+    id:'about',
+    title:'About'
+  },
+  {
+    id:'contact',    
+    title:'Contact'
+  }
+]
