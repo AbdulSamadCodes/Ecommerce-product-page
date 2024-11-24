@@ -9,7 +9,8 @@ export default {
     extend: {
       colors: {
         "grayish-blue": "hsl(220, 14%, 75%)",
-        "dark-grayish-blue" : "hsl(219, 9%, 45%)"
+        "dark-grayish-blue" : "hsl(219, 9%, 45%)",
+        "very-dark-blue": "hsl(220, 13%, 13%)"
       },
       screens: {
         "xs": "375px",

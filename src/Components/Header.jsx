@@ -15,8 +15,8 @@ function MobileNavbar({ handleMobileNav }) {
   return (
     <nav className={`mobile_navbar 
       w-[60%] fixed 
-      top-0 left-0  bottom-0 bg-black p-6 
-      transition-md:hidden`}>
+      top-0 left-0 bottom-0 px-4 py-6 
+      md:hidden`}>
       <button onClick={handleMobileNav}>
         <img src={iconClose} />
       </button>
@@ -26,8 +26,8 @@ function MobileNavbar({ handleMobileNav }) {
           const { id, title } = navLink;
 
           return <li key={id}>
-            <a href="#" className='text-white
-             font-semibold'>
+            <a href="#" className='text-very-dark-blue
+             font-bold'>
               {title}
             </a>
           </li>
