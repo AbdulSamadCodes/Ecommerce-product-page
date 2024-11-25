@@ -1,21 +1,17 @@
-import { React } from 'react';
-
 import { Header } from '/src/Components/Header.jsx';
 import { MobileNavbar } from '/src/Components/MobileNavbar.jsx';
 import { HeaderContextProvider } from '/src/contexts/HeaderContext.jsx';
-import { Container } from '/src/Components/Container.jsx';
 
-function App() {
+function Container() {
   return (
-    <>
+    <div className='max-w-[1100px] ms-auto 
+      me-auto px-6'>
       <HeaderContextProvider>
         <Header />
         <MobileNavbar />
       </HeaderContextProvider>
-
-      <Container />
-    </>
-  )
+    </div>
+  );
 }
 
-export default App;
+export { Container };

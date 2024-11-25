@@ -1,56 +1,29 @@
 import { React } from 'react';
+import { useContext } from 'react';
+import { HeaderContext } from '/src/contexts/HeaderContext.jsx';
 
 import { navLinks } from '/src/Constant/index.js';
-
 import iconMenu from '/src/assets/images/icon-menu.svg';
 import logo from '/src/assets/images/logo.svg';
 import iconCart from '/src/assets/images/icon-cart.svg';
 import imageAvatar from '/src/assets/images/image-avatar.png'
-import iconClose from '/src/assets/images/icon-close.svg';
 
-import { useToggle } from '/src/hooks/useToggle.js';
-
-function MobileNavbar({ handleMobileNav }) {
-
-  return (
-    <nav className={`mobile_navbar 
-      w-[60%] fixed 
-      top-0 left-0 bottom-0 px-4 py-6 
-      md:hidden`}>
-      <button onClick={handleMobileNav}>
-        <img src={iconClose} />
-      </button>
-
-      <ul className='flex flex-col gap-y-4 mt-[60px]'>
-        {navLinks.map((navLink) => {
-          const { id, title } = navLink;
-
-          return <li key={id}>
-            <a href="#" className='text-very-dark-blue
-             font-bold'>
-              {title}
-            </a>
-          </li>
-        })}
-      </ul>
-
-    </nav>
-  );
-}
+import { MobileNavbar } from '/src/Components/MobileNavbar.jsx';
 
 function Header() {
-  const [isNavOpen, toggleIsNavOpen] = useToggle(false);
+  const { isNavOpen, setIsNavOpen } = useContext(HeaderContext);
 
-  const handleMobileNav = () => {
-    toggleIsNavOpen(prevState => !prevState);
+  const openMobileNavbar = () => {
+    setIsNavOpen(true);
   }
 
   return (
-    <header className='header py-4 px-4 fixed
+    <header className='header max-w-[1100px] 
+      ms-auto me-auto py-4 px-4 fixed
       top-0 left-0 right-0 flex items-center
-      gap-4 md:gap-10 z-10'>
-      <button className='md:hidden'>
-        <img src={iconMenu} onClick={handleMobileNav} />
+      gap-4 md:gap-10 z-10 '>
+      <button className='md:hidden' onClick={openMobileNavbar}>
+        <img src={iconMenu} />
       </button>
 
       <a href="">
@@ -84,9 +57,6 @@ function Header() {
         </a>
       </span>
 
-      {isNavOpen &&
-        <MobileNavbar isActive={isNavOpen}
-          handleMobileNav={handleMobileNav} />}
     </header>
   )
 }
