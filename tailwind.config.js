@@ -12,6 +12,9 @@ export default {
         "dark-grayish-blue" : "hsl(219, 9%, 45%)",
         "very-dark-blue": "hsl(220, 13%, 13%)"
       },
+      backgrounds:{
+        "overlay" : "hsla(0,0%,0%,0.75)"   
+      },
       screens: {
         "xs": "375px",
         "sm": "575px",
