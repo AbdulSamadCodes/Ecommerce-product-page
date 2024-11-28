@@ -19,6 +19,9 @@ export default {
         "md": "768px",
         "lg": "992px",
         "xl": "1100px"
+      },
+      borderWidths:{
+        1:"1px"
       }
     },
   },
