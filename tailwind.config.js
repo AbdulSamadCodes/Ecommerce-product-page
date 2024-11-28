@@ -10,10 +10,8 @@ export default {
       colors: {
         "grayish-blue": "hsl(220, 14%, 75%)",
         "dark-grayish-blue" : "hsl(219, 9%, 45%)",
-        "very-dark-blue": "hsl(220, 13%, 13%)"
-      },
-      backgrounds:{
-        "overlay" : "hsla(0,0%,0%,0.75)"   
+        "very-dark-blue": "hsl(220, 13%, 13%)",
+        "black_75" : "hsla(0,0%,0%,0.75)"   
       },
       screens: {
         "xs": "375px",

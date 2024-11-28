@@ -1,15 +1,19 @@
 import { React } from 'react';
-import { HeaderContext } from '/src/contexts/HeaderContext.jsx';
 import { useContext } from 'react';
+
+import { HeaderContext } from '/src/contexts/HeaderContext.jsx';
+import { OverlayContext } from '/src/contexts/OverlayContext.jsx';
 
 import { navLinks } from '/src/Constant/index.js';
 import iconClose from '/src/assets/images/icon-close.svg';
 
 function Navbar() {
   const { setIsNavOpen } = useContext(HeaderContext);
+  const { setIsOverlayActive } = useContext(OverlayContext);
 
   const closeMobileNavbar = () => {
     setIsNavOpen(false);
+    setIsOverlayActive(false);
   }
 
   return (
