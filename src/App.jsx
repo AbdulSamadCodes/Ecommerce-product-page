@@ -10,20 +10,16 @@ import { OverlayContextProvider } from '/src/contexts/OverlayContext.jsx';
 
 function App() {
   return (
-    <>
-      <OverlayContextProvider>
-        
-        <Overlay />
+    <OverlayContextProvider>
+      <Overlay />  
 
-        <HeaderContextProvider>
-          <Header />
-          <MobileNavbar />
-        </ HeaderContextProvider>
+      <HeaderContextProvider>
+        <Header />
+        <MobileNavbar />
+      </ HeaderContextProvider >
 
-        <Container />
-
-      </ OverlayContextProvider>
-    </>
+      <Container />
+    </OverlayContextProvider>
   )
 }
 

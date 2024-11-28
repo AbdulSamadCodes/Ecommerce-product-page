@@ -1,7 +1,6 @@
 import { useContext } from 'react'; 
 import { Header } from '/src/Components/Header.jsx';
 import { MobileNavbar } from '/src/Components/MobileNavbar.jsx';
-import { useContextProvider } from '/src/hooks/useContextProvider.jsx';
 
 function Container() {
 

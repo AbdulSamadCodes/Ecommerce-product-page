@@ -14,6 +14,8 @@ function Header() {
   const { isNavOpen, setIsNavOpen } = useContext(HeaderContext);
   const { setIsOverlayActive } = useContext(OverlayContext);
 
+  console.log("Rerendered");
+
   const openMobileNavbar = () => {
     setIsNavOpen(true);
     setIsOverlayActive(true);

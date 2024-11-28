@@ -18,7 +18,7 @@ function Navbar() {
 
   return (
     <nav className={`mobile_navbar 
-      w-[60%] fixed 
+      w-[60%] fixed bg-white 
       top-0 left-0 bottom-0 px-4 py-6 
       z-20 md:hidden`}>
 

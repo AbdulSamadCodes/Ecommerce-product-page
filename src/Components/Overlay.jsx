@@ -3,6 +3,8 @@ import { useContext } from 'react';
 import { OverlayContext } from '/src/contexts/OverlayContext.jsx';
 
 function OverlayBody({ isActive }) {
+  console.log(isActive);
+
   return (
     isActive
       ?
@@ -15,10 +17,10 @@ function OverlayBody({ isActive }) {
 
 function Overlay() {
   const { isOverlayActive } = useContext(OverlayContext);
-  
+
   return (
-    <Overlay isActive={isOverlayActive} />
-  );
+    <OverlayBody isActive={isOverlayActive} />
+  );  
 }
 
 export { Overlay };
