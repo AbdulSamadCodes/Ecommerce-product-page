@@ -14,8 +14,6 @@ function Header() {
   const { isNavOpen, setIsNavOpen } = useContext(HeaderContext);
   const { setIsOverlayActive } = useContext(OverlayContext);
 
-  console.log("Rerendered");
-
   const openMobileNavbar = () => {
     setIsNavOpen(true);
     setIsOverlayActive(true);
@@ -29,7 +27,7 @@ function Header() {
       top-0 left-0 right-0 flex items-center
       gap-4 md:gap-10 md:border-b-1 border-b-grayish-blue'>
         <button className='md:hidden' onClick={openMobileNavbar}>
-          <img src={iconMenu} />
+        <img src={iconMenu} />
         </button>
         <a href="">
           <img href={'#'} src={logo} width={'110px'} />

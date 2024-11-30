@@ -3,7 +3,6 @@ import { useContext } from 'react';
 import { OverlayContext } from '/src/contexts/OverlayContext.jsx';
 
 function OverlayBody({ isActive }) {
-  console.log(isActive);
 
   return (
     isActive

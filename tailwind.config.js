@@ -20,7 +20,7 @@ export default {
         "lg": "992px",
         "xl": "1100px"
       },
-      borderWidths:{
+      borderWidth:{
         1:"1px"
       }
     },
