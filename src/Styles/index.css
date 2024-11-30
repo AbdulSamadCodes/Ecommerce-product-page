@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.slider {
+  display:flex;
+}
+
+.slider-slide {
+  min-width:100%;
+}

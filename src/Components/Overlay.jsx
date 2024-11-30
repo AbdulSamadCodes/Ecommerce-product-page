@@ -8,7 +8,7 @@ function OverlayBody({ isActive }) {
     isActive
       ?
       <div className='fixed inset-0
-       z-20  bg-black_75'>
+       z-20  bg-black_75 md:hidden'>
       </div> :
       null
   );
