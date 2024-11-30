@@ -1,15 +1,13 @@
 import { React } from 'react';
 
-function Slider({ sliderImages, autoplayCustomizaions }) {
-  return
-  {(
-      sliderImages.map((sliderImg) => {
-        return <div className="w-full">
-
-        </div>;
-      })
-    )};
+function Slider({ sliderImg }) {
+  console.log("rendered");  
   
+  return (
+    <div>
+      <img src={sliderImg} />
+    </div>
+  );
 }
 
 export { Slider };

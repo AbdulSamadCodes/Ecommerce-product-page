@@ -20,10 +20,9 @@ function Header() {
   }
 
   return (
-    <header className='header fixed w-full px-4 top-0 left-0'>
-      
+    <header className='header bg-white fixed w-full px-4 top-0 left-0'>   
       <div className='max-w-[1100px] 
-      ms-auto me-auto py-5
+      ms-auto me-auto py-5 
       top-0 left-0 right-0 flex items-center
       gap-4 md:gap-10 md:border-b-1 border-b-grayish-blue'>
         <button className='md:hidden' onClick={openMobileNavbar}>
