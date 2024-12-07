@@ -7,14 +7,14 @@ import iconPrevious from '/src/assets/images/icon-previous.svg';
 import iconNext from '/src/assets/images/icon-next.svg';
 
 function GallerySlider() {
-  const [slideNumber, slideNext, slidePrev, 
+  const [slideNext, slidePrev, 
         Slider, sliderRef] = useSlider(sliderImages.length);
 
   const memoizedImages = useMemo(() => sliderImages);
   
   return (
     <div className='slider-container relative overflow-hidden'>
-      <Slider currentSliderPos={slideNumber}
+      <Slider
         slideAlbum={memoizedImages} ref={sliderRef} />
 
       <button className='absolute top-[50%] left-3 bg-white 

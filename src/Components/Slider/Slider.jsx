@@ -1,7 +1,6 @@
 import { forwardRef } from 'react';
 
-const Slider = forwardRef(({ currentSliderPos, slideAlbum }, ref) => {
-  console.log(ref);
+const Slider = forwardRef(({slideAlbum }, ref) => {
 
   return (
     <div className='slider flex' ref={ref}>

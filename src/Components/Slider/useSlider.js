@@ -5,24 +5,25 @@ import { useRef } from 'react';
 import { Slider } from '/src/Components/Slider/Slider.jsx';
 
 const useSlider = (totalSlides) => {
-  const [slideNumber, setSlideNumber] = useState(1);
+  const slideNumber = useRef(0);
   const sliderRef = useRef(null);
 
   const slideNext = () => {
-    setSlideNumber((prevSlideNumber) => prevSlideNumber + 1);
+    slideNumber.current = slideNumber.current + 1;
 
     sliderRef.current.style.transform = `translateX(
-      -${(slideNumber % totalSlides) * 100}%)`;
+      -${((slideNumber.current) % totalSlides) * 100}%)`;
   };
 
   const slidePrev = () => {
-    setSlideNumber((prevSlideNumber) => prevSlideNumber - 1);
+    slideNumber.current = slideNumber.current === 0 ? totalSlides - 1 :
+                          slideNumber.current - 1;
 
     sliderRef.current.style.transform = `translateX(
-      ${(slideNumber) * 100}%)`;
+      -${((slideNumber.current) % totalSlides) * 100}%)`;
   };
 
-  return [slideNumber, slideNext, slidePrev, Slider, sliderRef];
-}
+  return [slideNext, slidePrev, Slider, sliderRef];
+};
 
 export { useSlider };
