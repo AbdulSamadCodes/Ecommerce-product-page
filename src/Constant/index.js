@@ -28,19 +28,19 @@ export const navLinks = [
 
 export const sliderImages = [
   {
-    id:'image1',
-    src:imageProduct1
+    id:'img-1',
+    'img':imageProduct1 , 
   },
   {
-    id:'image2',
-    src:imageProduct2
+    id:'img-2',
+    'img':imageProduct2 , 
   },
   {
-    id:'image3',
-    src:imageProduct3
+    id:'img-3',
+    'img':imageProduct3, 
   },
   {
-    id:'image4',
-    src:imageProduct4
-  }
-]
+    id:'img-4',
+    'img':imageProduct4 , 
+  },
+];
