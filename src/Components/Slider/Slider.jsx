@@ -1,22 +1,22 @@
-import { React } from 'react';
-import { useRef } from 'react';
+import { forwardRef } from 'react';
 
-function Slider({ currentSliderPos, slideAlbum }) {
-  const sliderRef = useRef(null);
+const Slider = forwardRef(({ currentSliderPos, slideAlbum }, ref) => {
+  console.log(ref);
 
   return (
-    <div className='slider flex' ref={sliderRef}>
+    <div className='slider flex' ref={ref}>
       {
         slideAlbum.map((slideData) => {
           const { id, img } = slideData;
 
-          return <div className = 'min-w-full' key={id}>
+          return <div className='min-w-full' key={id}>
             <img src={img} />
           </div>
         })
       }
-    </div>
+    </div >
   )
-}
+ }
+)
 
 export { Slider };
