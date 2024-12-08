@@ -24,7 +24,7 @@ function Header() {
       <div className='max-w-[1100px] 
       ms-auto me-auto py-5 
       top-0 left-0 right-0 flex items-center
-      gap-7 md:gap-10 md:border-b-1 border-b-grayish-blue'>
+      gap-7 md:gap-8 md:border-b-1 border-b-grayish-blue'>
         <button className='md:hidden' onClick={openMobileNavbar}>
         <img src={iconMenu} />
         </button>

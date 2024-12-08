@@ -3,7 +3,7 @@ import { forwardRef } from 'react';
 import { thumbnailGalleryImages } from '/src/Constant/index.js';
 
 const ThumbnailGallery = forwardRef(({ },ref) => {
-  
+
   const handleThumbnailSelection = (event) => {
     const thumbnailSrc = event.currentTarget.querySelector("img").src;
     
@@ -16,7 +16,9 @@ const ThumbnailGallery = forwardRef(({ },ref) => {
         thumbnailGalleryImages.map((thumbnailImg) => {
           const { id, img } = thumbnailImg;
 
-          return <span key={id} className='overflow-hidden rounded-md' 
+          return <span key={id} className='overflow-hidden 
+            rounded-md hover:outline outline-2
+            outline-orange-700' 
             onClick={handleThumbnailSelection}>
             <img src={img} />
           </span>
