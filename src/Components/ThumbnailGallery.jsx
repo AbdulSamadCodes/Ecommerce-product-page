@@ -1,9 +1,14 @@
 import { React } from 'react';
-import { useRef } from 'react';
+import { forwardRef } from 'react';
 import { thumbnailGalleryImages } from '/src/Constant/index.js';
 
-function ThumbnailGallery() {
+const ThumbnailGallery = forwardRef(({ },ref) => {
   
+  const handleThumbnailSelection = (event) => {
+    const thumbnailSrc = event.currentTarget.querySelector("img").src;
+    
+    ref.current.src = thumbnailSrc.replace('-thumbnail','');
+  }
 
   return (
     <div className='flex items-center gap-4'>
@@ -11,13 +16,15 @@ function ThumbnailGallery() {
         thumbnailGalleryImages.map((thumbnailImg) => {
           const { id, img } = thumbnailImg;
 
-          return <span className='overflow-hidden rounded-md'>
+          return <span key={id} className='overflow-hidden rounded-md' 
+            onClick={handleThumbnailSelection}>
             <img src={img} />
           </span>
         })
       }
     </div>
   );
-}
+ }
+)
 
 export { ThumbnailGallery };

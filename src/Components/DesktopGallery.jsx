@@ -1,18 +1,19 @@
 import { React } from 'react';
-import { useMemo } from 'react';
+import { useRef } from 'react';
 import { ThumbnailGallery } from '/src/Components/ThumbnailGallery.jsx';
 
 function DesktopGallery() {
-    
+   const mainImgRef = useRef(null); 
 
   return (
     <div className='desktop-gallery hidden md:grid 
-      overflow-hidden rounded-lg gap-5'>
-      <div>
-        <img />
+       gap-5'>
+
+      <div className='rounded-lg overflow-hidden'>
+        <img ref={mainImgRef}/>
       </div>
 
-      <ThumbnailGallery />
+      <ThumbnailGallery ref={mainImgRef}/>
     </div>
   );
 }
