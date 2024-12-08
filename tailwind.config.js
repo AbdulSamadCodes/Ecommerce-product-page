@@ -13,7 +13,8 @@ export default {
         "very-dark-blue": "hsl(220, 13%, 13%)",
         "black_75" : "hsla(0,0%,0%,0.75)",
         "light-grayish-blue": "hsl(223, 64%, 98%)",   
-        "orange-primary": "hsl(26, 100%, 55%)"
+        "orange-primary": "hsl(26, 100%, 55%)",
+        "pale-orange":" hsl(25, 100%, 94%)"
       },
       screens: {
         "xs": "375px",

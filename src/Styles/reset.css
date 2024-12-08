@@ -12,6 +12,11 @@
   position: absolute;
 }
 
+::selection{
+  background-color: hsl(26, 100%, 55%);
+  color:hsl(0,0%,0%);
+}
+
 li {
   list-style: none;
 }

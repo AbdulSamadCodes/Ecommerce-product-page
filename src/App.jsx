@@ -7,18 +7,25 @@ import { Dashboard } from '/src/Components/Dashboard.jsx';
 
 import { HeaderContextProvider } from '/src/contexts/HeaderContext.jsx';
 import { OverlayContextProvider } from '/src/contexts/OverlayContext.jsx';
+import { CartContextProvider } from '/src/contexts/CartContext.jsx';
 
 function App() {
   return (
     <OverlayContextProvider>
-      <Overlay />  
 
-      <HeaderContextProvider>
-        <Header />
-        <MobileNavbar />
-      </ HeaderContextProvider >
+      <Overlay />
+      <CartContextProvider>
 
-      <Dashboard />
+        <HeaderContextProvider>
+
+          <Header />
+          <MobileNavbar />
+
+        </ HeaderContextProvider >
+
+        <Dashboard />
+      </CartContextProvider>
+
     </OverlayContextProvider>
   )
 }

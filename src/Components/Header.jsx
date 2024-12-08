@@ -53,9 +53,7 @@ function Header() {
           <a href="#" className='relative'>
             <img src={iconCart} width={'25px'} />
 
-            < CartContextProvider>
-              <CartBasketCount/>
-            </ CartContextProvider>
+              <CartBasketCount />
           </a>
 
           <a href="#">
