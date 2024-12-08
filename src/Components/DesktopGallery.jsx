@@ -1,22 +1,20 @@
 import { React } from 'react';
 import { useMemo } from 'react';
-import { sliderImages } from '/src/Constant/index.js';
-import { useSlider } from '/src/Components/Slider/useSlider.js';
+import { ThumbnailGallery } from '/src/Components/ThumbnailGallery.jsx';
 
 function DesktopGallery() {
-  const [slideNext, slidePrev,
-    Slider, sliderRef] = useSlider(sliderImages.length);
-
-  const memoizedImages = useMemo(() => sliderImages);  
+    
 
   return (
-    <div className='desktop-gallery hidden md:block 
-      overflow-hidden rounded-lg'>
-      <Slider slideAlbum={memoizedImages}/>
+    <div className='desktop-gallery hidden md:grid 
+      overflow-hidden rounded-lg gap-5'>
+      <div>
+        <img />
+      </div>
 
-      
+      <ThumbnailGallery />
     </div>
   );
-} 
+}
 
 export { DesktopGallery };

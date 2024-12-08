@@ -1,7 +1,13 @@
-import  imageProduct1  from '/src/assets/images/image-product-1.jpg'
-import  imageProduct2  from '/src/assets/images/image-product-2.jpg'
-import  imageProduct3  from '/src/assets/images/image-product-3.jpg'
-import  imageProduct4  from '/src/assets/images/image-product-4.jpg'
+import  imageProduct1  from '/src/assets/images/image-product-1.jpg';
+import  imageProduct2  from '/src/assets/images/image-product-2.jpg';
+import  imageProduct3  from '/src/assets/images/image-product-3.jpg';
+import  imageProduct4  from '/src/assets/images/image-product-4.jpg';
+
+import  imageProduct1Thumbnail  from '/src/assets/images/image-product-1-thumbnail.jpg'
+import  imageProduct2Thumbnail  from '/src/assets/images/image-product-2-thumbnail.jpg'
+import  imageProduct3Thumbnail  from '/src/assets/images/image-product-3-thumbnail.jpg'
+import  imageProduct4Thumbnail  from '/src/assets/images/image-product-4-thumbnail.jpg'
+
 
 export const navLinks = [
   {
@@ -42,5 +48,24 @@ export const sliderImages = [
   {
     id:'img-4',
     'img':imageProduct4 , 
-  },
+  }
 ];
+
+export const thumbnailGalleryImages = [
+  {
+    id:'img-thumbnail-1',
+    'img':imageProduct1Thumbnail , 
+  },
+  {
+    id:'img-thumbnail-2',
+    'img':imageProduct2Thumbnail , 
+  },
+  {
+    id:'img-thumbnail-3',
+    'img':imageProduct3Thumbnail , 
+  },
+  {
+    id:'img-thumbnail-4',
+    'img':imageProduct4Thumbnail , 
+  }
+]
