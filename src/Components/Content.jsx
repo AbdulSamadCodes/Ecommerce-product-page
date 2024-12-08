@@ -1,5 +1,6 @@
 import { React } from 'react';
 import { Price } from '/src/Components/Price.jsx';
+import { CartCounter } from '/src/Components/Cart/CartCounter.jsx';
 
 function Content() {
   return (
@@ -22,6 +23,8 @@ function Content() {
       </p>
 
       <Price />
+
+      <CartCounter />
     </div>
   );
 }
