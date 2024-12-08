@@ -10,6 +10,9 @@ import logo from '/src/assets/images/logo.svg';
 import iconCart from '/src/assets/images/icon-cart.svg';
 import imageAvatar from '/src/assets/images/image-avatar.png'
 
+import { CartContextProvider } from '/src/contexts/CartContext.jsx';
+import { CartBasketCount } from '/src/Components/Cart/CartBasketCount.jsx';
+
 function Header() {
   const { isNavOpen, setIsNavOpen } = useContext(HeaderContext);
   const { setIsOverlayActive } = useContext(OverlayContext);
@@ -20,13 +23,13 @@ function Header() {
   }
 
   return (
-    <header className='header bg-white fixed w-full px-4 top-0 left-0'>   
+    <header className='header bg-white fixed w-full px-4 top-0 left-0'>
       <div className='max-w-[1100px] 
       ms-auto me-auto py-5 
       top-0 left-0 right-0 flex items-center
       gap-7 md:gap-8 md:border-b-1 border-b-grayish-blue'>
         <button className='md:hidden' onClick={openMobileNavbar}>
-        <img src={iconMenu} />
+          <img src={iconMenu} />
         </button>
         <a href="">
           <img href={'#'} src={logo} width={'110px'} />
@@ -47,15 +50,20 @@ function Header() {
           </nav>
         }
         <span className='ms-auto flex items-center gap-4 md:gap-10'>
-          <a href="#">
+          <a href="#" className='relative'>
             <img src={iconCart} width={'25px'} />
+
+            < CartContextProvider>
+              <CartBasketCount/>
+            </ CartContextProvider>
           </a>
+
           <a href="#">
             <img src={imageAvatar} width={'30px'} />
           </a>
         </span>
       </div>
-      
+
     </header>
   )
 }

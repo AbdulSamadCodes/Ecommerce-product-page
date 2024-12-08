@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.selected-thumbnail {
+  outline:2px solid hsl(26, 100%, 55%);
+}
+
+.selected-thumbnail::after {
+  position:absolute;
+  inset:0;
+  background-color: hsla(25, 100%, 93%,0.6);
+}
+
