@@ -11,7 +11,8 @@ export default {
         "grayish-blue": "hsl(220, 14%, 75%)",
         "dark-grayish-blue" : "hsl(219, 9%, 45%)",
         "very-dark-blue": "hsl(220, 13%, 13%)",
-        "black_75" : "hsla(0,0%,0%,0.75)"   
+        "black_75" : "hsla(0,0%,0%,0.75)",
+        "light-grayish-blue": "hsl(223, 64%, 98%)"   
       },
       screens: {
         "xs": "375px",
@@ -22,6 +23,9 @@ export default {
       },
       borderWidth:{
         1:"1px"
+      },
+      gridTemplateColumns:{
+        dashboard:"40% 60%"
       }
     },
   },

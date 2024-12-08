@@ -13,7 +13,7 @@ function GallerySlider() {
   const memoizedImages = useMemo(() => sliderImages);
   
   return (
-    <div className='slider-container relative overflow-hidden'>
+    <div className='slider-container relative md:hidden overflow-hidden'>
       <Slider
         slideAlbum={memoizedImages} ref={sliderRef} />
 
