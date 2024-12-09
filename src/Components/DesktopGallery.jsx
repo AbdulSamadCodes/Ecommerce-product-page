@@ -9,11 +9,12 @@ function DesktopGallery() {
   const mainImgRef = useRef(null);
 
   return (
-    <div className='desktop-gallery hidden md:grid 
-       gap-5'>
+    <div className='desktop-gallery hidden md:flex 
+       flex-col justify-between gap-6'>
 
-      <div className='rounded-lg overflow-hidden'>
-        <img src={imageProduct1} ref={mainImgRef} />
+      <div className='rounded-lg overflow-hidden '>
+        <img className='h-full' 
+        src={imageProduct1} ref={mainImgRef}/>
       </div>
 
       <ThumbnailGallery ref={mainImgRef} />
