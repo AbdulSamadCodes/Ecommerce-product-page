@@ -54,8 +54,6 @@ function Header() {
             <img src={iconCart} width={'25px'} />
 
               <CartBasketCount />
-
-              <CartBasket />
           </a>
 
           <a href="#">
