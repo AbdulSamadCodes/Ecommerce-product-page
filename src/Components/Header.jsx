@@ -53,13 +53,14 @@ function Header() {
           <a href="#" className='relative'>
             <img src={iconCart} width={'25px'} />
 
-              <CartBasketCount />
+            <CartBasketCount />
           </a>
 
           <a href="#">
             <img src={imageAvatar} width={'30px'} />
           </a>
         </span>
+        
       </div>
 
     </header>

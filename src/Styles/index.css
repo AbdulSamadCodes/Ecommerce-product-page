@@ -11,3 +11,7 @@
   inset:0;
   background-color: hsla(25, 100%, 93%,0.6);
 }
+
+.cart-basket {
+  box-shadow:5px 5px 5px  hsla(0,0%,0%,0.40);
+}

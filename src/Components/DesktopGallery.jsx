@@ -10,7 +10,7 @@ function DesktopGallery() {
 
   return (
     <div className='desktop-gallery hidden md:flex 
-       flex-col justify-between gap-6'>
+       flex-col gap-8'>
 
       <div className='rounded-lg overflow-hidden '>
         <img className='h-full' 
