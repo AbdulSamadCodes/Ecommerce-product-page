@@ -10,8 +10,8 @@ import logo from '/src/assets/images/logo.svg';
 import iconCart from '/src/assets/images/icon-cart.svg';
 import imageAvatar from '/src/assets/images/image-avatar.png'
 
-import { CartContextProvider } from '/src/contexts/CartContext.jsx';
 import { CartBasketCount } from '/src/Components/Cart/CartBasketCount.jsx';
+import { CartBasket } from '/src/Components/Cart/CartBasket.jsx';
 
 function Header() {
   const { isNavOpen, setIsNavOpen } = useContext(HeaderContext);
@@ -54,6 +54,8 @@ function Header() {
             <img src={iconCart} width={'25px'} />
 
               <CartBasketCount />
+
+              <CartBasket />
           </a>
 
           <a href="#">
