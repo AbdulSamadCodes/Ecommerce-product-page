@@ -25,11 +25,11 @@ function CartCounter() {
      gap-6 md:gap-4 flex-wrap'>
 
       <div className='flex items-center justify-between 
-      gap-9 p-2 w-full xs:w-auto bg-light-grayish-blue 
-      rounded-md shrink-0'>
+       gap-9 py-2 px-3 w-full xs:w-fit
+       bg-light-grayish-blue rounded-md'>
 
         <button className='counter__btn' 
-          onClick={decrementProductsCount}>
+          onClick={decrementProductsCount}> 
           <img src={iconMinus} />
         </button>
 
