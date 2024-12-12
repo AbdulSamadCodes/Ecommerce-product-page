@@ -8,7 +8,7 @@ import { useToggle } from '/src/hooks/useToggle.js';
 const CartContext = createContext();
 
 function CartContextProvider({ children }) {
-  const [cartProductsCount, setCartProductsCount,] = useState(0);
+  const [cartProductsCount, setCartProductsCount] = useState(0);
   const [isCartVisible, handleCartVisible] = useToggle(false);
 
   const data = useMemo(() => {

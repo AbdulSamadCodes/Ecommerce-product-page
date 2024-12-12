@@ -28,20 +28,26 @@ function CartCounter() {
        gap-9 py-2 px-3 w-full xs:w-fit
        bg-light-grayish-blue rounded-md'>
 
-        <button className='counter__btn'
+        <button className='counter__btn 
+          hover:opacity-70 '
           onClick={decrementProductsCount}>
           <img src={iconMinus} />
         </button>
 
         <p className='font-bold'>{cartProductsCount}</p>
 
-        <button className='counter__btn'
+        <button className='counter__btn 
+          hover:opacity-70 '
           onClick={incrementProductsCount}>
           <img src={iconPlus} />
         </button>
       </div>
 
-      <PrimaryButton icon={iconCartBlack} />
+      <PrimaryButton 
+        icon={iconCartBlack} 
+        text={'Add to cart'}
+        landscapeWidth={'fit'}
+        />
     </div>
   )
 }

@@ -38,6 +38,7 @@ function Header() {
         <a href="">
           <img href={'#'} src={logo} width={'110px'} />
         </a>
+
         {
           <nav className='navbar'>
             <ul className=' gap-12 hidden md:flex items-center'>
@@ -53,6 +54,7 @@ function Header() {
             </ul>
           </nav>
         }
+
         <span className='ms-auto flex items-center gap-4 
           md:gap-10' onClick={null}>
           <button className='relative'>
@@ -62,7 +64,7 @@ function Header() {
             <CartBasketCount />
           </button>
 
-          <button href="#">
+          <button className='profile-avatar rounded-full'>
             <img src={imageAvatar} width={'40px'} />
           </button>
         </span>

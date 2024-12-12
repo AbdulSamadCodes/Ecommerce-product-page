@@ -2,7 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-.selected-thumbnail {
+.selected-thumbnail,
+.profile-avatar:hover{
   outline:2px solid hsl(26, 100%, 55%);
 }
 
