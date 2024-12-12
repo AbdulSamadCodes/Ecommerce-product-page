@@ -26,8 +26,9 @@ export default {
       borderWidth:{
         1:"1px"
       },
+      
       gridTemplateColumns:{
-        dashboard:"40% 60%"
+        dashboard:"42% 58%"
       }
     },
   },

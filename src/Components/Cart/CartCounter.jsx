@@ -21,12 +21,12 @@ function CartCounter() {
   }
 
   return (
-    <div className='flex items-center flex-col
-     gap-8 md:gap-4 xs:flex-row flex-wrap'>
+    <div className='flex items-center 
+     gap-6 md:gap-4 flex-wrap'>
 
-      <div className='flex items-center gap-9 p-2 w-full
-      xs:w-auto bg-light-grayish-blue rounded-md 
-      justify-between'>
+      <div className='flex items-center justify-between 
+      gap-9 p-2 w-full xs:w-auto bg-light-grayish-blue 
+      rounded-md shrink-0'>
 
         <button className='counter__btn' 
           onClick={decrementProductsCount}>

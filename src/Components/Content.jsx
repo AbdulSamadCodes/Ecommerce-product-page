@@ -7,7 +7,7 @@ function Content() {
   return (
 
     <div className='content grid content-start 
-      gap-3 px-4 md:gap-8'>
+      gap-5 px-4 md:gap-8'>
 
       <div>
 
@@ -17,7 +17,7 @@ function Content() {
         </p>
 
         <h2 className='text-very-dark-blue font-bold
-          text-[24px] sm:text-[30px] md:text-[40px] mt-2'>
+          text-[27px] sm:text-[30px] md:text-[40px] mt-2'>
           Fall Limited Edition <br /> Sneakers
         </h2>
 
