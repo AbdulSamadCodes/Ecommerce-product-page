@@ -13,7 +13,7 @@ function DesktopGallery() {
        flex-col gap-8'>
 
       <div className='rounded-lg overflow-hidden '>
-        <img className='h-full' 
+        <img className='h-full ' 
         src={imageProduct1} ref={mainImgRef}/>
       </div>
 

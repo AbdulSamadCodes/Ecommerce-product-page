@@ -13,12 +13,14 @@ function GallerySlider() {
   const memoizedImages = useMemo(() => sliderImages);
   
   return (
-    <div className='slider-container relative md:hidden overflow-hidden'>
+    <div className='slider-container relative 
+      md:hidden overflow-hidden'>
       <Slider
         slideAlbum={memoizedImages} ref={sliderRef} />
 
-      <button className='absolute top-[50%] left-3 bg-white 
-         rounded-full w-9 h-9 grid place-content-center'
+      <button className='absolute top-[50%] left-3
+       bg-white rounded-full w-9 h-9
+        grid place-content-center'
         onClick={slidePrev}>
         <img src={iconPrevious} style={{ width: '10px', height: '10px' }} />
       </button>

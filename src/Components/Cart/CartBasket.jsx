@@ -3,13 +3,13 @@ import { useContext } from 'react';
 import { CartContext, CartContextProvider } from '/src/contexts/CartContext.jsx';
 
 function CartBasket( {isOpen} ) {
-  const { cartProductsCount } = useContext(CartContext);
+  const { cartProductsCount , isCartVisible } = useContext(CartContext);
   
-  return isOpen && (
-    <div className='cart-basket fixed top-[80px]
-     bg-white  w-full max-w-[350px]
-        z-10 left-[50%] translate-x-[-50%]
-       rounded-md'>
+  return isCartVisible && (
+    <div className='cart-basket absolute 
+       top-[90px] z-10 bg-white w-full 
+       max-w-[330px] left-[50%] 
+       translate-x-[-50%] rounded-md'>
 
       <div className='text-black py-3 
         px-3 font-semibold pb-5 border-b-1 

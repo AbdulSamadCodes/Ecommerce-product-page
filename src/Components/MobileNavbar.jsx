@@ -20,7 +20,7 @@ function Navbar() {
     <nav className={`mobile_navbar 
       w-[60%] fixed bg-white 
       top-0 left-0 bottom-0 px-4 py-6 
-      z-20 md:hidden`}>
+      z-30 md:hidden`}>
 
       <button onClick={closeMobileNavbar}>
         <img src={iconClose} />

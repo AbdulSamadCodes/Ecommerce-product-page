@@ -19,6 +19,7 @@ export default {
       screens: {
         "xs": "375px",
         "sm": "575px",
+
         "md": "768px",
         "lg": "992px",
         "xl": "1100px"
@@ -28,7 +29,7 @@ export default {
       },
       
       gridTemplateColumns:{
-        dashboard:"42% 58%"
+        dashboard:"40% 60%"
       }
     },
   },

@@ -9,11 +9,13 @@ import logo from '/src/assets/images/logo.svg';
 import iconCart from '/src/assets/images/icon-cart.svg';
 import imageAvatar from '/src/assets/images/image-avatar.png'
 
+import { CartContext } from '/src/contexts/CartContext.jsx';
 import { CartBasketCount } from '/src/Components/Cart/CartBasketCount.jsx';
 
 function Header() {
   const { isNavOpen, setIsNavOpen } = useContext(HeaderContext);
   const { setIsOverlayActive } = useContext(OverlayContext);
+  const { handleCartVisible } = useContext(CartContext);
 
   const openMobileNavbar = () => {
     setIsNavOpen(true);
@@ -21,11 +23,15 @@ function Header() {
   }
 
   return (
-    <header className='header bg-white fixed w-full px-4 top-0 left-0'>
+    <header className='header bg-white fixed w-full 
+      px-4 top-0 left-0 z-[15]'>
+
       <div className='max-w-[1100px] 
       ms-auto me-auto py-5 
-      top-0 left-0 right-0 flex items-center
-      gap-7 md:gap-8 md:border-b-1 border-b-grayish-blue'>
+      top-0 flex items-center
+      gap-7 md:gap-8 md:border-b-1
+    border-b-grayish-blue'>
+        
         <button className='md:hidden' onClick={openMobileNavbar}>
           <img src={iconMenu} />
         </button>
@@ -50,18 +56,18 @@ function Header() {
         <span className='ms-auto flex items-center gap-4 
         md:gap-10' onClick={null}>
           <a href="#" className='relative'>
-            <img src={iconCart} width={'25px'} />
+            <img src={iconCart} width={'25px'}
+              onClick={handleCartVisible} />
 
             <CartBasketCount />
           </a>
 
           <a href="#">
-            <img src={imageAvatar} width={'30px'} />
+            <img src={imageAvatar} width={'40px'} />
           </a>
         </span>
         
       </div>
-
     </header>
   )
 }
