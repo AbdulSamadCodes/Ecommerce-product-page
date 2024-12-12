@@ -15,3 +15,12 @@
 .cart-basket {
   box-shadow:5px 5px 5px  hsla(0,0%,0%,0.40);
 }
+
+@media (width > 768px) {
+  .cart-basket {
+    left:unset;
+    right:7%;
+    transform:none;
+  }
+}
+

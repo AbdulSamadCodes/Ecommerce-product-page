@@ -1,6 +1,5 @@
 import { React } from 'react';
 import { useContext } from 'react';
-
 import { HeaderContext } from '/src/contexts/HeaderContext.jsx';
 import { OverlayContext } from '/src/contexts/OverlayContext.jsx';
 
@@ -11,7 +10,6 @@ import iconCart from '/src/assets/images/icon-cart.svg';
 import imageAvatar from '/src/assets/images/image-avatar.png'
 
 import { CartBasketCount } from '/src/Components/Cart/CartBasketCount.jsx';
-import { CartBasket } from '/src/Components/Cart/CartBasket.jsx';
 
 function Header() {
   const { isNavOpen, setIsNavOpen } = useContext(HeaderContext);
@@ -49,7 +47,8 @@ function Header() {
             </ul>
           </nav>
         }
-        <span className='ms-auto flex items-center gap-4 md:gap-10'>
+        <span className='ms-auto flex items-center gap-4 
+        md:gap-10' onClick={null}>
           <a href="#" className='relative'>
             <img src={iconCart} width={'25px'} />
 

@@ -13,11 +13,11 @@ function CartCounter() {
   const { cartProductsCount, setCartProductsCount } = useContext(CartContext);
 
   const incrementProductsCount = () => {
-    setCartProductsCount(cartProductsCount + 1);
+    setCartProductsCount(count => count + 1);
   }
-
+  
   const decrementProductsCount = () => {
-    setCartProductsCount(cartProductsCount - 1);
+    setCartProductsCount(count => count <= 0 ? 0 : count - 1);
   }
 
   return (
@@ -28,18 +28,20 @@ function CartCounter() {
       xs:w-auto bg-light-grayish-blue rounded-md 
       justify-between'>
 
-        <button className='counter__btn' onClick={decrementProductsCount}>
+        <button className='counter__btn' 
+          onClick={decrementProductsCount}>
           <img src={iconMinus} />
         </button>
 
         <p className='font-bold'>{cartProductsCount}</p>
 
-        <button className='counter__btn' onClick={incrementProductsCount}>
+        <button className='counter__btn' 
+          onClick={incrementProductsCount}>
           <img src={iconPlus} />
         </button>
       </div>
 
-        <PrimaryButton icon={iconCartBlack}/>
+       <PrimaryButton icon={iconCartBlack}/>
     </div>
   )
 }
