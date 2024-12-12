@@ -27,11 +27,11 @@ function Header() {
       px-4 top-0 left-0 z-[15]'>
 
       <div className='max-w-[1100px] 
-      ms-auto me-auto py-5 
-      top-0 flex items-center
-      gap-7 md:gap-8 md:border-b-1
-    border-b-grayish-blue'>
-        
+       ms-auto me-auto py-5 
+       top-0 flex items-center
+       gap-7 md:gap-8 md:border-b-1
+     border-b-grayish-blue'>
+
         <button className='md:hidden' onClick={openMobileNavbar}>
           <img src={iconMenu} />
         </button>
@@ -54,19 +54,19 @@ function Header() {
           </nav>
         }
         <span className='ms-auto flex items-center gap-4 
-        md:gap-10' onClick={null}>
-          <a href="#" className='relative'>
+          md:gap-10' onClick={null}>
+          <button className='relative'>
             <img src={iconCart} width={'25px'}
               onClick={handleCartVisible} />
 
             <CartBasketCount />
-          </a>
+          </button>
 
-          <a href="#">
+          <button href="#">
             <img src={imageAvatar} width={'40px'} />
-          </a>
+          </button>
         </span>
-        
+
       </div>
     </header>
   )
