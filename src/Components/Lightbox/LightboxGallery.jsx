@@ -14,30 +14,31 @@ function LightboxGallery() {
 
   return (
     <div className='lightbox-container fixed
-        max-w-[330px] overflow-hidden top-[50%]
-        left-[50%] translate-x-[-50%] translate-y-[-50%]
-        z-40 rounded-lg'>
+        max-w-[330px] top-[50%] 
+        left-[50%] translate-x-[-50%] 
+        translate-y-[-50%] z-40 rounded-lg'>
 
-      <div className='lightbox-gallery relative'>
+      <div className='lightbox-gallery relative 
+        overflow-hidden rounded-md'>
         <Slider
           slideAlbum={memoizedImages} ref={sliderRef} />
-      </div>
 
-      <button className='absolute top-[50%] left-0
-       bg-white rounded-full w-8 h-8
-         grid place-content-center'
-        onClick={slidePrev}>
-        <img src={iconPrevious}
-          style={{ width: '10px', height: '10px' }} />
-      </button>
+        <button className='fixed top-[50%] -left-3
+        bg-white rounded-full w-8 h-8
+          grid place-content-center'
+           onClick={slidePrev}>
+          <img src={iconPrevious}
+            style={{ width: '10px', height: '10px' }} />
+        </button>
 
-      <button className='absolute top-[50%] right-0 
+        <button className='fixed top-[50%] -right-3 
          bg-white rounded-full w-8 h-8 
-         grid place-content-center'
-        onClick={slideNext}>
-        <img src={iconNext}
-          style={{ width: '10px', height: '10px' }} />
-      </button>
+          grid place-content-center'
+           onClick={slideNext}>
+          <img src={iconNext}
+            style={{ width: '10px', height: '10px' }} />
+        </button>
+      </div>
     </div>
   )
 }
