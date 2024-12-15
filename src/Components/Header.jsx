@@ -27,7 +27,7 @@ function Header() {
       px-4 top-0 left-0 z-[15]'>
 
       <div className='max-w-[1100px] 
-       ms-auto me-auto py-5 
+       ms-auto me-auto py-3 md:py-5 
        top-0 flex items-center
        gap-7 md:gap-8 md:border-b-1
      border-b-grayish-blue'>

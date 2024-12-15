@@ -8,14 +8,7 @@ import imageProduct1Thumbnail from '/src/assets/images/image-product-1-thumbnail
 import { PrimaryButton } from '/src/Components/PrimaryButton.jsx';
 
 function CartBasket({ isOpen }) {
-  const { cartProductsCount,
-    setCartProductsCount, isCartVisible } = useContext(CartContext);
-
-  const productPrice = 125;
-
-  const unsetProductCount = () => {
-    setCartProductsCount(0);
-  }
+  const { isCartVisible } = useContext(CartContext);
 
   return isCartVisible ? (
     <div className='cart-basket grid absolute 
@@ -30,20 +23,11 @@ function CartBasket({ isOpen }) {
       </div>
 
       <div className='pt-4 pb-5 px-4 grid gap-5'>
-        <CartProduct
-          productThumbnail={imageProduct1Thumbnail}
-          productCount={cartProductsCount}
-          productPrice={productPrice}
-          unsetProductCount={unsetProductCount}
-        />
-
-        {cartProductsCount > 0 && <PrimaryButton
+        <PrimaryButton
           icon={null}
           text={'Checkout'}
           landscapeWidth={'full'}
         />
-        }
-
       </div>
     </div>
 

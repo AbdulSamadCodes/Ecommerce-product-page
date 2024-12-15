@@ -9,11 +9,6 @@ function CartProduct({ productThumbnail,
   const totalAmount = productPrice * productCount;
   const [isVisible, toggleVisible] = useToggle(true);
 
-  const onClickHandler = () => {
-    toggleVisible();
-    unsetProductCount();
-  }
-
   return isVisible && productCount > 0 ?
     (
       <ul>
@@ -26,17 +21,16 @@ function CartProduct({ productThumbnail,
             <p>Fall Limited Edition Sneakers</p>
 
             <p>
-              {`$${productPrice}.00 x ${productCount}`}
+              0
               <strong className='text-[15px] ms-1
              text-very-dark-blue 
               font-bold'>
-               {`$${totalAmount}`}
+                0
               </strong>
             </p>
           </span>
 
-          <button className='ms-auto'
-             onClick={onClickHandler}>
+          <button className='ms-auto'>
             <img src={iconDelete} />
           </button>
         </li>

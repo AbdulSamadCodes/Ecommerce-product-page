@@ -6,13 +6,13 @@ import { useSlider } from '/src/Components/Slider/useSlider.js';
 import iconPrevious from '/src/assets/images/icon-previous.svg';
 import iconNext from '/src/assets/images/icon-next.svg';
 
-function LightboxGallery() {
+function LightboxGallery({ isOpen }) {
   const [slideNext, slidePrev,
     Slider, sliderRef] = useSlider(sliderImages.length);
 
   const memoizedImages = useMemo(() => sliderImages);
 
-  return (
+  return isOpen ? (
     <div className='lightbox-container fixed
         max-w-[330px] top-[50%] 
         left-[50%] translate-x-[-50%] 
@@ -23,16 +23,16 @@ function LightboxGallery() {
         <Slider
           slideAlbum={memoizedImages} ref={sliderRef} />
 
-        <button className='fixed top-[50%] -left-3
-        bg-white rounded-full w-8 h-8
+        <button className='fixed top-[50%] -left-4
+        bg-white rounded-full w-10 h-10
           grid place-content-center'
            onClick={slidePrev}>
           <img src={iconPrevious}
             style={{ width: '10px', height: '10px' }} />
         </button>
 
-        <button className='fixed top-[50%] -right-3 
-         bg-white rounded-full w-8 h-8 
+        <button className='fixed top-[50%] -right-4 
+         bg-white rounded-full w-10 h-10 
           grid place-content-center'
            onClick={slideNext}>
           <img src={iconNext}
@@ -40,7 +40,7 @@ function LightboxGallery() {
         </button>
       </div>
     </div>
-  )
+  ) : null;
 }
 
 export { LightboxGallery };
