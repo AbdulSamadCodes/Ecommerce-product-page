@@ -18,8 +18,8 @@ function Header() {
   const { handleCartVisible } = useContext(CartContext);
 
   const openMobileNavbar = () => {
-    setIsNavOpen(true);
-    setIsOverlayActive(true);
+    setIsNavOpen();
+    setIsOverlayActive();
   }
 
   return (

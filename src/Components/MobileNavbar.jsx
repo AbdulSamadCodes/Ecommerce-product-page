@@ -1,4 +1,5 @@
 import { React } from 'react';
+import { useEffect } from 'react';
 import { useContext } from 'react';
 
 import { HeaderContext } from '/src/contexts/HeaderContext.jsx';
@@ -11,13 +12,31 @@ function Navbar() {
   const { setIsNavOpen } = useContext(HeaderContext);
   const { setIsOverlayActive } = useContext(OverlayContext);
 
+  const MAX_PORTRAIT_WIDTH = 768;
+
   const closeMobileNavbar = () => {
-    setIsNavOpen(false);
-    setIsOverlayActive(false);
+    setIsNavOpen();
+    setIsOverlayActive();
   }
 
+  const closeOnResize = () => {
+    if(window.innerWidth > MAX_PORTRAIT_WIDTH) {
+      setIsNavOpen();
+      setIsOverlayActive();
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener('resize',closeOnResize);
+
+    return () => {
+      window.removeEventListener('resize',closeOnResize);
+    }
+  }, []);
+
+
   return (
-    <nav className={`mobile_navbar 
+    <nav className={`mobile-navbar 
       w-[60%] fixed bg-white 
       top-0 left-0 bottom-0 px-4 py-6 
       z-30 md:hidden`}>

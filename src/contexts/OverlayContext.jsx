@@ -11,7 +11,7 @@ function OverlayContextProvider({ children }) {
   const value = useMemo(() => {
     return {
       isOverlayActive : isOverlayActive,
-      setIsOverlayActive: setIsOverlayActive 
+      setIsOverlayActive: setIsOverlayActive     
     }
   },[isOverlayActive]);
 

@@ -6,11 +6,13 @@ function OverlayBody({ isActive }) {
   return (
     isActive
       ?
-      <div className='fixed inset-0
-       z-20  bg-black_75 md:hidden'>
+      <div className='overlay fixed inset-0
+        z-20  bg-black_75
+        '>
       </div> :
       null
   );
+
 }
 
 function Overlay() {
