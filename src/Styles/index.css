@@ -18,6 +18,11 @@
              -4px -4px 6px hsla(0,0%,0%,0.40) ;
 }
 
+.navigation-btn {
+  top:40%;
+  transform:translateY(-50%);  
+}
+    
 @media (width > 768px) {
   .cart-basket {
     left:unset;

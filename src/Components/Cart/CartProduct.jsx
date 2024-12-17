@@ -3,12 +3,16 @@ import { React } from 'react';
 import iconDelete from '/src/assets/images/icon-delete.svg';
 import { useToggle } from '/src/hooks/useToggle.js';
 
-function CartProduct({ productThumbnail,
-  productCount, productPrice, unsetProductCount }) {
-
-  const totalAmount = productPrice * productCount;
+function CartProduct({ productThumbnail,productPrice, productQuantity }) {
   const [isVisible, toggleVisible] = useToggle(true);
+  const [cartItems , setCartItems]  = useState([]); 
 
+  const productData = {
+    productThumbnail : productThumbnail,
+    productPrice : productPrice,
+    productQuantity : productQuantity
+  }  
+  
   return isVisible && productCount > 0 ?
     (
       <ul>

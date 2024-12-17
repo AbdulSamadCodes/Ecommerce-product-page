@@ -9,11 +9,14 @@ const CartContext = createContext();
 
 function CartContextProvider({ children }) {
   const [isCartVisible, handleCartVisible] = useToggle(false);
+  const [cartItems , setCartItems]  = useState([]); 
 
   const data = useMemo(() => {
     return {
       isCartVisible: isCartVisible,
-      handleCartVisible: handleCartVisible
+      handleCartVisible: handleCartVisible,
+      cartItems : cartItems,
+      setCartItems : setCartItems
     }
   }, [ isCartVisible]);
 

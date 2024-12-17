@@ -1,5 +1,6 @@
 import { React } from 'react';
 import { useMemo } from 'react';
+import { useRef } from 'react';
 import { useSlider } from '/src/Components/Slider/useSlider.js';
 
 import { sliderImages } from '/src/Constant/index.js';
@@ -8,24 +9,25 @@ import iconNext from '/src/assets/images/icon-next.svg';
 
 function GallerySlider() {
   const [slideNext, slidePrev, 
-        Slider, sliderRef] = useSlider(sliderImages.length);
+        Slider, ref] = useSlider(sliderImages.length);
 
   const memoizedImages = useMemo(() => sliderImages);
-  
+
   return (
     <div className='slider-container relative 
       md:hidden overflow-hidden'>
       <Slider
-        slideAlbum={memoizedImages} ref={sliderRef} />
+        slideAlbum={memoizedImages} ref={ref} />
 
-      <button className='absolute top-[50%] left-3
+      <button className='navigation-btn absolute left-3
        bg-white rounded-full w-9 h-9
         grid place-content-center'
         onClick={slidePrev}>
         <img src={iconPrevious} style={{ width: '10px', height: '10px' }} />
       </button>
 
-      <button className='absolute top-[50%] right-3 bg-white 
+      <button className='navigation-btn 
+         absolute right-3 bg-white 
          rounded-full w-9 h-9 grid place-content-center'
         onClick={slideNext}>
         <img src={iconNext} style={{ width: '10px', height: '10px' }} />
