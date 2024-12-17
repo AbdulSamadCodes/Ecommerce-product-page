@@ -8,8 +8,8 @@ import iconPrevious from '/src/assets/images/icon-previous.svg';
 import iconNext from '/src/assets/images/icon-next.svg';
 
 function GallerySlider() {
-  const [slideNext, slidePrev, 
-        Slider, ref] = useSlider(sliderImages.length);
+  const [slideNext, slidePrev,
+    Slider,sliderRef] = useSlider(sliderImages.length);
 
   const memoizedImages = useMemo(() => sliderImages);
 
@@ -17,9 +17,9 @@ function GallerySlider() {
     <div className='slider-container relative 
       md:hidden overflow-hidden'>
       <Slider
-        slideAlbum={memoizedImages} ref={ref} />
+        slideAlbum={memoizedImages} ref={sliderRef} />
 
-      <button className='navigation-btn absolute left-3
+      <button className='navigation-btn absolute left-2
        bg-white rounded-full w-9 h-9
         grid place-content-center'
         onClick={slidePrev}>
@@ -27,7 +27,7 @@ function GallerySlider() {
       </button>
 
       <button className='navigation-btn 
-         absolute right-3 bg-white 
+         absolute right-2 bg-white 
          rounded-full w-9 h-9 grid place-content-center'
         onClick={slideNext}>
         <img src={iconNext} style={{ width: '10px', height: '10px' }} />

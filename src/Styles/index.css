@@ -19,10 +19,20 @@
 }
 
 .navigation-btn {
-  top:40%;
+  top:50%;
   transform:translateY(-50%);  
 }
-    
+
+.close-btn .icon {
+  fill : #69707D;
+
+  transition : fill 200ms ease-out;
+}
+
+.close-btn:is(:hover , :focus) .icon {
+  fill :hsl(26, 100%, 55%);
+}
+
 @media (width > 768px) {
   .cart-basket {
     left:unset;

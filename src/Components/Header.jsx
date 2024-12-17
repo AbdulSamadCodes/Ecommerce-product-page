@@ -14,12 +14,12 @@ import { CartBasketCount } from '/src/Components/Cart/CartBasketCount.jsx';
 
 function Header() {
   const { isNavOpen, setIsNavOpen } = useContext(HeaderContext);
-  const { setIsOverlayActive } = useContext(OverlayContext);
-  const { handleCartVisible } = useContext(CartContext);
+  const { toggleIsOverlayActive } = useContext(OverlayContext);
+  const { toggleCartVisible } = useContext(CartContext);
 
   const openMobileNavbar = () => {
     setIsNavOpen();
-    setIsOverlayActive();
+    toggleIsOverlayActive();
   }
 
   return (
@@ -59,7 +59,7 @@ function Header() {
           md:gap-10' onClick={null}>
           <button className='relative'>
             <img src={iconCart} width={'25px'}
-              onClick={handleCartVisible} />
+              onClick={toggleCartVisible} />
 
             <CartBasketCount />
           </button>

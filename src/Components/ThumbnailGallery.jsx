@@ -3,10 +3,11 @@ import { forwardRef } from 'react';
 import { thumbnailGalleryImages } from '/src/Constant/index.js';
 
 const ThumbnailGallery = forwardRef(({ }, ref) => {  
+  
   const handleThumbnailSelection = (event) => {
     const thumbnailSrc = event.currentTarget.querySelector("img")
       .src;
-
+    
     ref.current.src = thumbnailSrc.replace('-thumbnail', '');
 
     event.currentTarget.parentElement.querySelectorAll('.thumbnail').

@@ -8,8 +8,8 @@ import imageProduct1Thumbnail from '/src/assets/images/image-product-1-thumbnail
 import { PrimaryButton } from '/src/Components/PrimaryButton.jsx';
 
 function CartBasket({ isOpen }) {
-  const { isCartVisible } = useContext(CartContext);
-
+  const { isCartVisible , } = useContext(CartContext);
+  console.log(isCartVisible);
 
   return isCartVisible ? (
     <div className='cart-basket grid absolute 

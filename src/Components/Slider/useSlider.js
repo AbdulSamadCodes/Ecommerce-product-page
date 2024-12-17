@@ -2,11 +2,13 @@ import { React } from 'react';
 import { useState } from 'react';
 import { useMemo } from 'react';
 import { useRef } from 'react';
+import { useEffect } from 'react';
+
 import { Slider } from '/src/Components/Slider/Slider.jsx';
 
 const useSlider = (totalSlides) => {
   const slideNumber = useRef(0);
-  const sliderRef = useRef(null);
+  const sliderRef = useRef();
 
   const slideNext = () => {
     slideNumber.current = slideNumber.current + 1;
@@ -23,7 +25,7 @@ const useSlider = (totalSlides) => {
       -${((slideNumber.current) % totalSlides) * 100}%)`;
   };
 
-  return [slideNext, slidePrev, Slider, sliderRef];
+  return [slideNext, slidePrev, Slider,sliderRef];
 };
 
 export { useSlider };

@@ -6,12 +6,12 @@ import { useToggle } from '/src/hooks/useToggle.js';
 const OverlayContext = createContext();
 
 function OverlayContextProvider({ children }) {
-  const [isOverlayActive,setIsOverlayActive] = useToggle(false);
+  const [isOverlayActive,toggleIsOverlayActive] = useToggle(false);
 
   const value = useMemo(() => {
     return {
       isOverlayActive : isOverlayActive,
-      setIsOverlayActive: setIsOverlayActive     
+      toggleIsOverlayActive: toggleIsOverlayActive     
     }
   },[isOverlayActive]);
 
