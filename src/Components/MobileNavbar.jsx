@@ -10,19 +10,19 @@ import iconClose from '/src/assets/images/icon-close.svg';
 
 function Navbar() {
   const { setIsNavOpen } = useContext(HeaderContext);
-  const { setIsOverlayActive } = useContext(OverlayContext);
+  const { toggleIsOverlayActive } = useContext(OverlayContext);
 
   const MAX_PORTRAIT_WIDTH = 768;
 
   const closeMobileNavbar = () => {
     setIsNavOpen();
-    setIsOverlayActive();
+    toggleIsOverlayActive();
   }
 
   const closeOnResize = () => {
     if(window.innerWidth > MAX_PORTRAIT_WIDTH) {
       setIsNavOpen();
-      setIsOverlayActive();
+      toggleIsOverlayActive();
     }
   }
 

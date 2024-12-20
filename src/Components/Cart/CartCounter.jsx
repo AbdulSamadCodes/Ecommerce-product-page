@@ -10,7 +10,8 @@ import { PrimaryButton } from '/src/Components/PrimaryButton.jsx';
 
 function CartCounter() {
   const { cartItems , setCartItems } = useContext(CartContext);     
-
+  
+  
   return (
     <div className='flex items-center 
      gap-6 md:gap-4 flex-wrap'>

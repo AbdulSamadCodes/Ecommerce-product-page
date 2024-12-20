@@ -7,25 +7,34 @@ import { useEffect } from 'react';
 import { Slider } from '/src/Components/Slider/Slider.jsx';
 
 const useSlider = (totalSlides) => {
-  const slideNumber = useRef(0);
-  const sliderRef = useRef();
+  const [slideNumber, setSlideNumber] = useState(0);
+  const sliderRef = useRef(null);
 
   const slideNext = () => {
-    slideNumber.current = slideNumber.current + 1;
+    setSlideNumber((prev) => {
+      const newSlideNumber = prev < totalSlides
+        ? prev + 1 : prev % totalSlides;
+        
+        sliderRef.current.style.transform = `translateX(
+      -${( newSlideNumber % totalSlides) * 100}%)`;
 
-    sliderRef.current.style.transform = `translateX(
-      -${((slideNumber.current) % totalSlides) * 100}%)`;
-  };
+      return newSlideNumber;
+    })
+  } 
 
   const slidePrev = () => {
-    slideNumber.current = slideNumber.current === 0 ? totalSlides - 1 :
-                          slideNumber.current - 1;
+    setSlideNumber((prev) => {
+      const newSlideNumber = prev === 0
+        ? totalSlides - 1 : prev - 1;
 
-    sliderRef.current.style.transform = `translateX(
-      -${((slideNumber.current) % totalSlides) * 100}%)`;
-  };
+      sliderRef.current.style.transform = `translateX(
+      -${(newSlideNumber % totalSlides) * 100}%)`;
 
-  return [slideNext, slidePrev, Slider,sliderRef];
-};
+      return newSlideNumber;
+    })
+  }
+
+  return [slideNext, slidePrev, Slider, sliderRef, slideNumber];
+}
 
 export { useSlider };

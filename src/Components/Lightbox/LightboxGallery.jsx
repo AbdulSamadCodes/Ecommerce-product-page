@@ -14,10 +14,10 @@ import { ThumbnailGallery } from '/src/Components/ThumbnailGallery.jsx';
 
 function LightboxGallery({ isOpen, disableOpen }) {
   const [slideNext, slidePrev,
-    Slider, sliderRef] = useSlider(sliderImages.length);
+    Slider, sliderRef,slideNumber] = useSlider(sliderImages.length);
 
   const memoizedImages = useMemo(() => sliderImages);
-
+  
   return isOpen ? (
     <div className='lightbox-container grid gap-4
         fixed  max-w-[330px] top-[50%] 
@@ -54,12 +54,16 @@ function LightboxGallery({ isOpen, disableOpen }) {
             height="15"
             xmlns="http://www.w3.org/2000/svg">
             <path d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z"
-            fill-rule="evenodd" />
+            fillRule="evenodd" />
           </svg>
 
         </button>
       </div>
 
+      <ThumbnailGallery 
+        ref={sliderRef}
+        slideNumber={slideNumber}
+      />
     </div>
   ) : null;
 }

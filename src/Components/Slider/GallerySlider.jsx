@@ -1,6 +1,5 @@
 import { React } from 'react';
 import { useMemo } from 'react';
-import { useRef } from 'react';
 import { useSlider } from '/src/Components/Slider/useSlider.js';
 
 import { sliderImages } from '/src/Constant/index.js';
@@ -11,13 +10,15 @@ function GallerySlider() {
   const [slideNext, slidePrev,
     Slider,sliderRef] = useSlider(sliderImages.length);
 
-  const memoizedImages = useMemo(() => sliderImages);
+  const memoizedImages = useMemo(() => sliderImages);  
 
   return (
     <div className='slider-container relative 
       md:hidden overflow-hidden'>
       <Slider
-        slideAlbum={memoizedImages} ref={sliderRef} />
+        ref={sliderRef} 
+        slideAlbum={memoizedImages} 
+        />
 
       <button className='navigation-btn absolute left-2
        bg-white rounded-full w-9 h-9
