@@ -7,8 +7,6 @@ import { OverlayContext } from '/src/contexts/OverlayContext.jsx';
 import { useToggle } from '/src/hooks/useToggle.js'
 import { useSlider } from '/src/Components/Slider/useSlider.js';
 
-import { ThumbnailGallery } from '/src/Components/ThumbnailGallery.jsx';
-
 import { LightboxGallery } from
   '/src/Components/Lightbox/LightboxGallery.jsx';
 
@@ -18,7 +16,9 @@ function DesktopGallery() {
   const { toggleIsOverlayActive } = useContext(OverlayContext);
   const [isLightboxOpen, toggleLightboxOpen] = useToggle(false);
 
-  const [, ,Slider, sliderRef, slideNumber] = useSlider(sliderImages.length);
+  const [, ,Slider,ThumbnailGallery, sliderRef, 
+        slideNumber,setSlideNumber] = useSlider(sliderImages.length);
+
   const memoizedImages = useMemo(() => sliderImages);  
   
   const enableLightboxGallery = () => {
@@ -45,7 +45,11 @@ function DesktopGallery() {
           </div>
         </div>
 
-        <ThumbnailGallery ref={sliderRef} slideNumber={slideNumber}/>
+        <ThumbnailGallery 
+          ref={sliderRef} 
+          slideNumber={slideNumber}
+          setSlideNumber={setSlideNumber} 
+        />
 
         <LightboxGallery isOpen={isLightboxOpen}
           disableOpen={disableLightboxGallery} />

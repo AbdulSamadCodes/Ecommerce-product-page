@@ -10,11 +10,9 @@ import iconPrevious from '/src/assets/images/icon-previous.svg';
 import iconNext from '/src/assets/images/icon-next.svg';
 import iconClose from '/src/assets/images/icon-close.svg';
 
-import { ThumbnailGallery } from '/src/Components/ThumbnailGallery.jsx';
-
 function LightboxGallery({ isOpen, disableOpen }) {
-  const [slideNext, slidePrev,
-    Slider, sliderRef,slideNumber] = useSlider(sliderImages.length);
+  const [slideNext, slidePrev,Slider,ThumbnailGallery, 
+    sliderRef,slideNumber,setSlideNumber] = useSlider(sliderImages.length);
 
   const memoizedImages = useMemo(() => sliderImages);
   
@@ -63,6 +61,7 @@ function LightboxGallery({ isOpen, disableOpen }) {
       <ThumbnailGallery 
         ref={sliderRef}
         slideNumber={slideNumber}
+        setSlideNumber={setSlideNumber}
       />
     </div>
   ) : null;

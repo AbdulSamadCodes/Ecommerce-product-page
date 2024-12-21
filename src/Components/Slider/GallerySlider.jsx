@@ -8,7 +8,8 @@ import iconNext from '/src/assets/images/icon-next.svg';
 
 function GallerySlider() {
   const [slideNext, slidePrev,
-    Slider,sliderRef] = useSlider(sliderImages.length);
+    Slider,ThumbnailGallery,sliderRef
+  ] = useSlider(sliderImages.length);
 
   const memoizedImages = useMemo(() => sliderImages);  
 

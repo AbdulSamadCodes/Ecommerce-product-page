@@ -5,6 +5,7 @@ import { useRef } from 'react';
 import { useEffect } from 'react';
 
 import { Slider } from '/src/Components/Slider/Slider.jsx';
+import { ThumbnailGallery } from '/src/Components/Slider/ThumbnailGallery.jsx';
 
 const useSlider = (totalSlides) => {
   const [slideNumber, setSlideNumber] = useState(0);
@@ -12,9 +13,9 @@ const useSlider = (totalSlides) => {
 
   const slideNext = () => {
     setSlideNumber((prev) => {
-      const newSlideNumber = prev < totalSlides
+       const newSlideNumber = prev < totalSlides
         ? prev + 1 : prev % totalSlides;
-        
+      
         sliderRef.current.style.transform = `translateX(
       -${( newSlideNumber % totalSlides) * 100}%)`;
 
@@ -34,7 +35,8 @@ const useSlider = (totalSlides) => {
     })
   }
 
-  return [slideNext, slidePrev, Slider, sliderRef, slideNumber];
+  return [slideNext, slidePrev, Slider, ThumbnailGallery, 
+            sliderRef, slideNumber, setSlideNumber];
 }
 
 export { useSlider };
