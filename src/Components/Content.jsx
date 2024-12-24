@@ -2,12 +2,17 @@ import { React } from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
 
+import { useFetch } from '/src/hooks/UseFetch.js';
+
 import { Price } from '/src/Components/Price.jsx';
-
 import { CartCounter } from '/src/Components/Cart/CartCounter.jsx';
-function Content() {
-   return (
 
+
+function Content() {
+  const URL = '/src/ProductData/productdata.json';
+  const [productsData , error , isLoading ] = useFetch(URL);
+
+   return (
     <div className='content grid content-start 
       gap-5 px-4 md:gap-8'>
 
@@ -31,7 +36,10 @@ function Content() {
         durable rubber outer sole, they’ll withstand everything the weather can offer.
       </p>
 
-       <Price />
+       <Price 
+       productsData={productsData} 
+       error={error} 
+       isLoading={isLoading}/>
 
       <CartCounter />
 
