@@ -2,14 +2,15 @@ import { React } from 'react';
 import { useContext } from 'react';
 import { CartContext } from '/src/contexts/CartContext.jsx';
 
-import { CartProduct } from '/src/Components/Cart/CartProduct.jsx';
+import { CartProductsList } from '/src/Components/Cart/CartProductsList.jsx';
 import imageProduct1Thumbnail from '/src/assets/images/image-product-1-thumbnail.jpg'
 
 import { PrimaryButton } from '/src/Components/PrimaryButton.jsx';
 
 function CartBasket({ isOpen }) {
   const { isCartVisible , } = useContext(CartContext);
-    
+
+  
   return isCartVisible ? (
     <div className='cart-basket grid absolute 
        top-[90px] z-10 bg-white w-full 
@@ -21,6 +22,8 @@ function CartBasket({ isOpen }) {
         border-b-1 border-b-grayish-blue'>
         Cart
       </div>
+
+      <CartProductsList />
 
       <div className='pt-4 pb-5 px-4 grid gap-5'>
         <PrimaryButton

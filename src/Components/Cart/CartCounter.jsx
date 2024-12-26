@@ -1,4 +1,5 @@
 import { React } from 'react';
+import { useState } from 'react';
 import { useContext } from 'react';
 import { CartContext } from '/src/contexts/CartContext.jsx';
 import { useFetch } from '/src/hooks/useFetch.js';
@@ -12,13 +13,24 @@ import { PrimaryButton } from '/src/Components/PrimaryButton.jsx';
 function CartCounter() {
   const URL = '/src/ProductData/productdata.json';  
 
+  const [quantity , setQuantity] = useState(0);
   const { cartItems, setCartItems } = useContext(CartContext);
   const {data : productData } = useFetch(URL);
 
   const fetchProductData = () => {
-    setCartItems(item => [...item , ]);
+    productData["quantity"] = quantity;
+
+    setCartItems(item => [...item , productData]);
   };
   
+  const incrementQuantity = () => {
+    setQuantity(prev => prev + 1);
+  };
+
+  const decrementQuantity = () => {
+    setQuantity(prev => prev > 0 ? prev - 1 : 0);
+  };
+
   return (  
     <>
       <div className='flex items-center 
@@ -30,13 +42,13 @@ function CartCounter() {
 
           <button className='counter__btn 
           hover:opacity-70'>
-            <img src={iconMinus} />
+            <img src={iconMinus} onClick={decrementQuantity}/>
           </button>
 
-          <p className='font-bold'>0</p>
+          <p className='font-bold'>{quantity}</p>
 
           <button className='counter__btn 
-          hover:opacity-70 '>
+          hover:opacity-70' onClick={incrementQuantity}>
             <img src={iconPlus} />
           </button>
         </div>

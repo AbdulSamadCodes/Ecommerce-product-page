@@ -3,26 +3,27 @@ import { React } from 'react';
 import iconDelete from '/src/assets/images/icon-delete.svg';
 import { useToggle } from '/src/hooks/useToggle.js';
 
-function CartProduct() {
+import imageProduct1Thumbnail from '/src/assets/images/image-product-1-thumbnail.jpg'; 
+
+function CartItem( { itemData } ) {
   const [isVisible, toggleVisible] = useToggle(true);
 
-  return isVisible && productCount > 0 ?
+  const { price , quantity } = itemData;
+
+  return isVisible && quantity > 0 ?
     (
-      <ul>
         <li className='flex items-center gap-4'>
           <img
             className='rounded-md'
-            src={productThumbnail} width={'60px'} />
+            src={imageProduct1Thumbnail} width={'60px'} />
 
           <span className='text-dark-grayish-blue text-[13px]'>
-            <p>Fall Limited Edition Sneakers</p>
+            <p>{price}</p>
 
             <p>
-              0
               <strong className='text-[15px] ms-1
              text-very-dark-blue 
               font-bold'>
-                0
               </strong>
             </p>
           </span>
@@ -31,8 +32,6 @@ function CartProduct() {
             <img src={iconDelete} />
           </button>
         </li>
-      </ul>
-
     ) : (
 
       <div className='py-16 px-3 
@@ -45,4 +44,4 @@ function CartProduct() {
     )
 }
 
-export { CartProduct };
+export { CartItem };

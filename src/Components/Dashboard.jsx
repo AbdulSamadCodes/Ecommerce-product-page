@@ -7,6 +7,8 @@ import { DesktopGallery } from '/src/Components/DesktopGallery.jsx';
 import { CartBasket } from '/src/Components/Cart/CartBasket.jsx';
 
 function Dashboard() {
+  console.log("Rendered");
+
   return (
     <>
       <main className='max-w-[1100px]
