@@ -1,9 +1,10 @@
 import { React } from 'react';
 
-function Price (productsData , error, isLoading) {
+function Price ({ productsData , error, isLoading }) {
   if(error) return <p className="font-bold">Error Loading Prices!!</p>
 
   if(isLoading) return <p className="font-bold">Loading...</p>
+  console.log(productsData);
 
   return (
     <div>
