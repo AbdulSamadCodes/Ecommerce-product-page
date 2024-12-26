@@ -7,7 +7,6 @@ import { useFetch } from '/src/hooks/UseFetch.js';
 import { Price } from '/src/Components/Price.jsx';
 import { CartCounter } from '/src/Components/Cart/CartCounter.jsx';
 
-
 function Content() {
   const URL = '/src/ProductData/productdata.json';
   const [productsData , error , isLoading ] = useFetch(URL);
@@ -32,14 +31,13 @@ function Content() {
 
       <p className='text-dark-grayish-blue text-[15px]
          font-medium max-w-[52ch]'>
-        These low-profile sneakers are your perfect casual wear companion. Featuring a
-        durable rubber outer sole, they’ll withstand everything the weather can offer.
+        These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.
       </p>
 
        <Price 
-       productsData={productsData} 
-       error={error} 
-       isLoading={isLoading}/>
+        productsData={productsData} 
+        error={error} 
+        isLoading={isLoading}/>
 
       <CartCounter />
 
