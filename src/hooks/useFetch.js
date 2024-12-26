@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 
 function useFetch(url) {
-   const [productData, setProductData] = useState({});
+   const [data, setData] = useState({});
    const [error, setError] = useState(false);
    const [isLoading, setIsLoading] = useState(false);
 
@@ -13,7 +13,7 @@ function useFetch(url) {
 
             const response = await fetch(url);
             const data = await response.json();
-            setProductData(data);
+            setData(data);
 
             setIsLoading(false);
          } catch (error) {
@@ -24,7 +24,7 @@ function useFetch(url) {
       })();
    }, []);
 
-   return [productData, error, isLoading];
+   return { data, error, isLoading };
 }
 
 export { useFetch };

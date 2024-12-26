@@ -10,7 +10,7 @@ import { ThumbnailGallery } from '/src/Components/Slider/ThumbnailGallery.jsx';
 const useSlider = (totalSlides) => {
   const [slideNumber, setSlideNumber] = useState(0);
   const sliderRef = useRef(null);
-
+  
   const slideNext = () => {
     setSlideNumber((prev) => {
        const newSlideNumber = prev < totalSlides

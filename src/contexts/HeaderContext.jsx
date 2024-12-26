@@ -7,17 +7,15 @@ const HeaderContext = createContext();
 const HeaderContextProvider = ({ children }) => {
   const [isNavOpen, setIsNavOpen] = useToggle(false);
 
-  const value = useMemo(() => {
-    return {
-      isNavOpen: isNavOpen, 
-      setIsNavOpen : setIsNavOpen 
-    }
-  },[isNavOpen]);
+  const value = {
+    isNavOpen: isNavOpen,
+    setIsNavOpen: setIsNavOpen
+  };
 
   return (
-    <HeaderContext.Provider value={value}>
+    <HeaderContext.Provider value={value} >
       {children}
-    </HeaderContext.Provider>
+    </HeaderContext.Provider >
   );
 }
 

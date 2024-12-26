@@ -1,6 +1,7 @@
 import { React } from 'react';
 import { useContext } from 'react';
-import { CartContext } from '/src/contexts/CartContext.jsx'
+import { CartContext } from '/src/contexts/CartContext.jsx';
+import { useFetch } from '/src/hooks/useFetch.js';
 
 import iconPlus from '/src/assets/images/icon-plus.svg';
 import iconMinus from '/src/assets/images/icon-minus.svg';
@@ -9,35 +10,44 @@ import iconCartBlack from '/src/assets/images/icon-cart-black.svg';
 import { PrimaryButton } from '/src/Components/PrimaryButton.jsx';
 
 function CartCounter() {
-  const { cartItems , setCartItems } = useContext(CartContext);         
+  const URL = '/src/ProductData/productdata.json';  
+
+  const { cartItems, setCartItems } = useContext(CartContext);
+  const {data : productData } = useFetch(URL);
+
+  const fetchProductData = () => {
+    setCartItems(item => [...item , ]);
+  };
   
-  return (
-    <div className='flex items-center 
+  return (  
+    <>
+      <div className='flex items-center 
      gap-6 md:gap-4 flex-wrap'>
 
-      <div className='flex items-center justify-between 
+        <div className='flex items-center justify-between 
        gap-9 py-2 px-3 w-full xs:w-fit
        bg-light-grayish-blue rounded-md'>
 
-        <button className='counter__btn 
+          <button className='counter__btn 
           hover:opacity-70'>
-          <img src={iconMinus} />
-        </button>
+            <img src={iconMinus} />
+          </button>
 
-        <p className='font-bold'>0</p>
+          <p className='font-bold'>0</p>
 
-        <button className='counter__btn 
+          <button className='counter__btn 
           hover:opacity-70 '>
-          <img src={iconPlus} />
-        </button>
-      </div>
+            <img src={iconPlus} />
+          </button>
+        </div>
 
-      <PrimaryButton 
-        icon={iconCartBlack} 
-        text={'Add to cart'}
-        landscapeWidth={'fit'} 
-        />
-    </div>
+        <PrimaryButton
+          icon={iconCartBlack}
+          text={'Add to cart'}
+          landscapeWidth={'fit'}
+          onClick={fetchProductData} />
+      </div>
+    </>
   )
 }
 

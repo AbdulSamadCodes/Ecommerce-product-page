@@ -9,7 +9,8 @@ import { CartCounter } from '/src/Components/Cart/CartCounter.jsx';
 
 function Content() {
   const URL = '/src/ProductData/productdata.json';
-  const [productsData , error , isLoading ] = useFetch(URL);
+
+  const { data : productData , error , isLoading } = useFetch(URL);
 
    return (
     <div className='content grid content-start 
@@ -35,7 +36,7 @@ function Content() {
       </p>
 
        <Price 
-        productsData={productsData} 
+        productData={productData} 
         error={error} 
         isLoading={isLoading}/>
 

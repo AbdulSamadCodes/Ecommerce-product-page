@@ -4,8 +4,8 @@ import { forwardRef } from 'react';
 import { thumbnailGalleryImages } from '/src/Constant/index.js';
 
 const ThumbnailGallery = forwardRef(({ slideNumber, setSlideNumber }, ref) => {
-  const thumbnailGalleryRef = useRef(null);  
-
+  const thumbnailGalleryRef = useRef(null);
+  
   const moveSlider = (newSlideNumber) => {
     ref.current.style.transform = `translateX(
       -${newSlideNumber * 100}%)`;

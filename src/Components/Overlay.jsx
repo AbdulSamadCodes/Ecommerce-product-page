@@ -12,7 +12,6 @@ function OverlayBody({ isActive }) {
       </div> :
       null
   );
-
 }
 
 function Overlay() {

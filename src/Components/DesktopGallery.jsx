@@ -18,7 +18,7 @@ function DesktopGallery() {
 
   const [, ,Slider,ThumbnailGallery, sliderRef, 
         slideNumber,setSlideNumber] = useSlider(sliderImages.length);
-
+    
   const memoizedImages = useMemo(() => sliderImages);  
   
   const enableLightboxGallery = () => {
