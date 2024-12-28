@@ -1,6 +1,7 @@
 import { React } from 'react';
 
 function PrimaryButton({ icon , text, landscapeWidth, onClick }) {
+  
 
   return (
     <button className={`bg-orange-primary  

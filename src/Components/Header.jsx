@@ -15,7 +15,7 @@ import { CartBasketCount } from '/src/Components/Cart/CartBasketCount.jsx';
 function Header() {
   const { isNavOpen, setIsNavOpen } = useContext(HeaderContext);
   const { toggleIsOverlayActive } = useContext(OverlayContext);
-  const { toggleCartVisible } = useContext(CartContext);
+  const { isCartVisible , toggleCartVisible } = useContext(CartContext);
 
   const openMobileNavbar = () => {
     setIsNavOpen();
@@ -61,7 +61,7 @@ function Header() {
             <img src={iconCart} width={'25px'}
               onClick={toggleCartVisible} />
 
-            <CartBasketCount />
+            { isCartVisible && <CartBasketCount /> }
           </button>
 
           <button className='profile-avatar rounded-full'>

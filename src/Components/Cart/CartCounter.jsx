@@ -11,18 +11,41 @@ import iconCartBlack from '/src/assets/images/icon-cart-black.svg';
 import { PrimaryButton } from '/src/Components/PrimaryButton.jsx';
 
 function CartCounter() {
-  const URL = '/src/ProductData/productdata.json';  
+  const URL = '/src/ProductData/productdata.json';
 
-  const [quantity , setQuantity] = useState(0);
+  const [quantity, setQuantity] = useState(0);
   const { cartItems, setCartItems } = useContext(CartContext);
-  const {data : productData } = useFetch(URL);
-
-  const fetchProductData = () => {
-    productData["quantity"] = quantity;
-
-    setCartItems(item => [...item , productData]);
-  };
+  const { data: productData } = useFetch(URL);
+  const { toggleCartVisible } = useContext(CartContext);
   
+  const addToCart = () => {
+    if (quantity === 0) return;
+    
+    const similarCartItem = cartItems.find(cartItem => {
+      return cartItem.id === productData.id;
+    });
+
+    setCartItems(items => {
+      if(similarCartItem) {
+        const clonedItems = [...items];
+
+        const similarItemIndex = clonedItems.indexOf(similarCartItem);
+
+        const updatedItem = {
+          ...clonedItems[similarItemIndex] ,
+          quantity
+        }
+
+        clonedItems[similarItemIndex] = updatedItem;
+
+        return clonedItems;
+      }
+
+      const cartBasketItem = { ...productData , quantity };
+      return [...items , cartBasketItem ];
+    });
+  };
+
   const incrementQuantity = () => {
     setQuantity(prev => prev + 1);
   };
@@ -31,7 +54,7 @@ function CartCounter() {
     setQuantity(prev => prev > 0 ? prev - 1 : 0);
   };
 
-  return (  
+  return (
     <>
       <div className='flex items-center 
      gap-6 md:gap-4 flex-wrap'>
@@ -42,7 +65,7 @@ function CartCounter() {
 
           <button className='counter__btn 
           hover:opacity-70'>
-            <img src={iconMinus} onClick={decrementQuantity}/>
+            <img src={iconMinus} onClick={decrementQuantity} />
           </button>
 
           <p className='font-bold'>{quantity}</p>
@@ -57,7 +80,7 @@ function CartCounter() {
           icon={iconCartBlack}
           text={'Add to cart'}
           landscapeWidth={'fit'}
-          onClick={fetchProductData} />
+          onClick={addToCart} />
       </div>
     </>
   )

@@ -9,18 +9,23 @@ function Price({ productData, error, isLoading }) {
     <div>
       <span className='flex items-center gap-3'>
         <p className='flex font-bold text-[24px]'>
-         {`$${productData.discountedPrice?.toFixed(2)}`}
+         {isNaN(productData.discountedPrice) ? '0' :
+               `$${productData.discountedPrice?.toFixed(2)}`}
         </p>
 
         <span className='bg-black text-white 
           font-bold py-[2px] px-2 rounded-lg'>
-          {(100 * productData?.discount) + "%"}
+            
+          {isNaN(productData.discountedPrice) ? '0' :
+             (100 * productData?.discount) + "%" }
+
         </span>
 
       </span>
       <p className='text-dark-grayish-blue 
         font-extrabold mt-2 line-through'>
-        {`$${productData.price?.toFixed(2)}`}
+        {isNaN(productData.discountedPrice) ? '0' :
+              `$${productData.price?.toFixed(2)}`}
       </p>
 
     </div>

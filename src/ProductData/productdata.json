@@ -1,5 +1,6 @@
 {
-  "name" : "Limited edition oranged",
+  "id" : "1",
+  "name" : "Fall Limited Edition Sneakers",
   "price" : 250.00,
   "discount" : 0.50,
   "discountedPrice" : 125.00, 

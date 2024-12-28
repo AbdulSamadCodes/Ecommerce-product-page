@@ -8,9 +8,11 @@ import imageProduct1Thumbnail from '/src/assets/images/image-product-1-thumbnail
 import { PrimaryButton } from '/src/Components/PrimaryButton.jsx';
 
 function CartBasket({ isOpen }) {
-  const { isCartVisible , } = useContext(CartContext);
-
+  const { isCartVisible , toggleCartVisible } = useContext(CartContext);  
   
+  const closeCart = () => toggleCartVisible(false);
+  
+
   return isCartVisible ? (
     <div className='cart-basket grid absolute 
        top-[90px] z-10 bg-white w-full 
@@ -23,15 +25,18 @@ function CartBasket({ isOpen }) {
         Cart
       </div>
 
-      <CartProductsList />
-
       <div className='pt-4 pb-5 px-4 grid gap-5'>
+        
+        <CartProductsList />
+
         <PrimaryButton
           icon={null}
           text={'Checkout'}
           landscapeWidth={'full'}
+          onClick={closeCart}
         />
       </div>
+
     </div>
 
   ) : null

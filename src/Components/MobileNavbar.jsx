@@ -21,7 +21,7 @@ function Navbar() {
 
   const closeOnResize = () => {
     if(window.innerWidth > MAX_PORTRAIT_WIDTH) {
-      setIsNavOpen();
+      toggleIsNavOpen();
       toggleIsOverlayActive();
     }
   }
