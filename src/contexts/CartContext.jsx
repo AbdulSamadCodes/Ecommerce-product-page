@@ -10,7 +10,7 @@ const CartContext = createContext();
 function CartContextProvider({ children }) {
   const [isCartVisible, toggleCartVisible] = useToggle(false);
   const [cartItems, setCartItems] = useState([]);
-
+  
   const value = {
     isCartVisible: isCartVisible,
     toggleCartVisible: toggleCartVisible,

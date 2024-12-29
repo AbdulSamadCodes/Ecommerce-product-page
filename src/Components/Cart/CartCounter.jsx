@@ -17,22 +17,22 @@ function CartCounter() {
   const { cartItems, setCartItems } = useContext(CartContext);
   const { data: productData } = useFetch(URL);
   const { toggleCartVisible } = useContext(CartContext);
-  
+
   const addToCart = () => {
     if (quantity === 0) return;
-    
+
     const similarCartItem = cartItems.find(cartItem => {
       return cartItem.id === productData.id;
     });
 
     setCartItems(items => {
-      if(similarCartItem) {
+      if (similarCartItem) {
         const clonedItems = [...items];
 
         const similarItemIndex = clonedItems.indexOf(similarCartItem);
 
         const updatedItem = {
-          ...clonedItems[similarItemIndex] ,
+          ...clonedItems[similarItemIndex],
           quantity
         }
 
@@ -41,8 +41,8 @@ function CartCounter() {
         return clonedItems;
       }
 
-      const cartBasketItem = { ...productData , quantity };
-      return [...items , cartBasketItem ];
+      const cartBasketItem = { ...productData, quantity };
+      return [...items, cartBasketItem];
     });
   };
 

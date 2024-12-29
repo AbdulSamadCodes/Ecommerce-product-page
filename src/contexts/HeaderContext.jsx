@@ -9,7 +9,7 @@ const HeaderContextProvider = ({ children }) => {
 
   const value = {
     isNavOpen: isNavOpen,
-    setIsNavOpen: setIsNavOpen
+    toggleIsNavOpen: toggleIsNavOpen
   };
 
   return (

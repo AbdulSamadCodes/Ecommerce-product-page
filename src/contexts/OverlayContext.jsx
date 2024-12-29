@@ -10,7 +10,7 @@ function OverlayContextProvider({ children }) {
 
   const value = {
     isOverlayActive: isOverlayActive,
-    toggleIsOverlayActive: toggleIsOverlayActive     
+    toggleIsOverlayActive: toggleIsOverlayActive
   };
 
   return (

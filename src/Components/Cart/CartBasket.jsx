@@ -10,9 +10,8 @@ import { PrimaryButton } from '/src/Components/PrimaryButton.jsx';
 function CartBasket({ isOpen }) {
   const { isCartVisible , toggleCartVisible } = useContext(CartContext);  
   
-  const closeCart = () => toggleCartVisible(false);
+  const closeCart = () => toggleCartVisible();
   
-
   return isCartVisible ? (
     <div className='cart-basket grid absolute 
        top-[90px] z-10 bg-white w-full 
