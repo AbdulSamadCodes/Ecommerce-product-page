@@ -18,7 +18,7 @@ const ThumbnailGallery = forwardRef(({ slideNumber, setSlideNumber }, ref) => {
       thumbnail.classList.remove("selected-thumbnail");
     });
 
-    const selectedThumbnail = event.target.closest("span");
+    const selectedThumbnail = event.target.closest("span"); 
     selectedThumbnail.classList.add("selected-thumbnail");
 
     const selectedIndex = Array.from(thumbnails)
@@ -37,6 +37,7 @@ const ThumbnailGallery = forwardRef(({ slideNumber, setSlideNumber }, ref) => {
       items-center gap-4'
       onClick={handleThumbnailSelection}>
       {
+      
         thumbnailGalleryImages.map((thumbnailImg, index) => {
           const { id, img } = thumbnailImg;
 

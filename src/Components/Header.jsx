@@ -13,12 +13,12 @@ import { CartContext } from '/src/contexts/CartContext.jsx';
 import { CartBasketCount } from '/src/Components/Cart/CartBasketCount.jsx';
 
 function Header() {
-  const { isNavOpen, setIsNavOpen } = useContext(HeaderContext);
+  const { isNavOpen, toggleIsNavOpen } = useContext(HeaderContext);
   const { toggleIsOverlayActive } = useContext(OverlayContext);
-  const { isCartVisible , toggleCartVisible } = useContext(CartContext);
+  const { isCartVisible, toggleCartVisible } = useContext(CartContext);
 
   const openMobileNavbar = () => {
-    setIsNavOpen();
+    toggleIsNavOpen();
     toggleIsOverlayActive();
   }
 
@@ -61,7 +61,7 @@ function Header() {
             <img src={iconCart} width={'25px'}
               onClick={toggleCartVisible} />
 
-            { isCartVisible && <CartBasketCount /> }
+            {isCartVisible && <CartBasketCount />}
           </button>
 
           <button className='profile-avatar rounded-full'>

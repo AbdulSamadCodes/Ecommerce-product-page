@@ -9,28 +9,28 @@ import { navLinks } from '/src/Constant/index.js';
 import iconClose from '/src/assets/images/icon-close.svg';
 
 function Navbar() {
-  const { setIsNavOpen } = useContext(HeaderContext);
+  const { toggleIsNavOpen } = useContext(HeaderContext);
   const { toggleIsOverlayActive } = useContext(OverlayContext);
 
   const MAX_PORTRAIT_WIDTH = 768;
 
   const closeMobileNavbar = () => {
-    setIsNavOpen();
+    toggleIsNavOpen();
     toggleIsOverlayActive();
   }
 
   const closeOnResize = () => {
-    if(window.innerWidth > MAX_PORTRAIT_WIDTH) {
+    if (window.innerWidth > MAX_PORTRAIT_WIDTH) {
       toggleIsNavOpen();
       toggleIsOverlayActive();
     }
   }
 
   useEffect(() => {
-    window.addEventListener('resize',closeOnResize);
+    window.addEventListener('resize', closeOnResize);
 
     return () => {
-      window.removeEventListener('resize',closeOnResize);
+      window.removeEventListener('resize', closeOnResize);
     }
   }, []);
 

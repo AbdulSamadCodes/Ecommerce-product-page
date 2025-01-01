@@ -11,6 +11,20 @@ function useSlider(totalSlides) {
   const [slideNumber, setSlideNumber] = useState(0);
   const sliderRef = useRef(null);
 
+  const styleThumbnails = (index) => {
+    const thumbnailGallery = sliderRef.current.parentElement.nextElementSibling;
+
+    if (!(thumbnailGallery.classList.contains("thumbnail-gallery"))) return;
+
+    const thumbnails = Array.from(thumbnailGallery.children);
+
+    thumbnails.forEach((thumbnail) => {
+      thumbnail.classList.remove("selected-thumbnail");
+    });
+
+    thumbnails[index % thumbnails.length].classList.add("selected-thumbnail");
+  }
+
   const slideNext = () => {
     setSlideNumber((prev) => {
       const newSlideNumber = prev < totalSlides
@@ -18,6 +32,8 @@ function useSlider(totalSlides) {
 
       sliderRef.current.style.transform = `translateX(
       -${(newSlideNumber % totalSlides) * 100}%)`;
+
+      styleThumbnails(newSlideNumber);
 
       return newSlideNumber;
     })
@@ -30,6 +46,8 @@ function useSlider(totalSlides) {
 
       sliderRef.current.style.transform = `translateX(
       -${(newSlideNumber % totalSlides) * 100}%)`;
+
+      styleThumbnails(newSlideNumber);
 
       return newSlideNumber;
     })
