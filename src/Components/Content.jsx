@@ -8,7 +8,7 @@ import { Price } from '/src/Components/Price.jsx';
 import { CartCounter } from '/src/Components/Cart/CartCounter.jsx';
 
 function Content() {
-  const URL = '/src/ProductData/productdata.json';
+  const URL = '/public/ProductData/productdata.json';
 
   const { data : productData , error , isLoading } = useFetch(URL);
 

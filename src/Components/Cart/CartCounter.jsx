@@ -11,7 +11,7 @@ import iconCartBlack from '/src/assets/images/icon-cart-black.svg';
 import { PrimaryButton } from '/src/Components/PrimaryButton.jsx';
 
 function CartCounter() {
-  const URL = '/src/ProductData/productdata.json';
+  const URL = '/public/ProductData/productdata.json';
 
   const [quantity, setQuantity] = useState(0);
   const { cartItems, setCartItems } = useContext(CartContext);
