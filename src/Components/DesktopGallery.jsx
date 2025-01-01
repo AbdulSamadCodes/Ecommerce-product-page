@@ -46,9 +46,9 @@ function DesktopGallery() {
         </div>
 
         <ThumbnailGallery 
-          ref={sliderRef} 
           slideNumber={slideNumber}
           setSlideNumber={setSlideNumber} 
+          ref={sliderRef} 
         />
 
         <LightboxGallery isOpen={isLightboxOpen}
